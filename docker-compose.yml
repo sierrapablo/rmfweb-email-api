@@ -1,14 +1,14 @@
-name: restful-api-nodejs-template  # Nombre de tu plantilla
+version: "3"
 
 services:
-  restful-api:  # Nombre del servicio
+  rmfweb-email-api:
     build:
-      context: .  # Ruta donde se encuentra el Dockerfile
-      dockerfile: Dockerfile  # Nombre del Dockerfile (opcional si se llama "Dockerfile")
-    image: restful-api-nodejs  # Nombre de la imagen generada
-    container_name: restful-api-container  # Nombre del contenedor
+      context: .
+      dockerfile: Dockerfile
+    image: rmfweb-email-api
+    container_name: rmfweb-email-api
     ports:
-      - "3000:3000"  # Mapea el puerto 3000 del contenedor al puerto 3000 del host
+      - "3030:3000"
     volumes:
-      - ./src:/home/docker/restful-api-nodejs/app/src  # Sincroniza la carpeta 'src' local con el contenedor
-    restart: unless-stopped  # Reinicia el contenedor a menos que se detenga manualmente
+      - ./src:/home/docker/rmfweb-email-api/app/src
+    restart: unless-stopped
