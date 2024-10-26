@@ -9,6 +9,8 @@ services:
     container_name: rmfweb-email-api
     ports:
       - "3030:3000"
+    env-file:
+      - .env
     volumes:
       - ./src:/home/docker/rmfweb-email-api/app/src
     restart: unless-stopped
